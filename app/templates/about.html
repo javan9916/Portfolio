@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<link href="{% static styles %}" rel="stylesheet">
+
+<main role="main">
+    <section class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img class="bd-placeholder-img rounded-circle" src="{% static main_img %}" width="280" height="280">
+                </div>
+                <div class="col-8">
+                    <h2>About me</h2>
+                    <p class="lead"> I'm a 21 y/o student that loves music, play guitar, help others, and play
+                        video games with friends and hangout with my girlfriend, currently, I'm finishing my 3rd year as
+                        a Computer Engineering student
+                        and throughout my career I've known many people that have inspired me to think out of the box
+                        and learn new things to become a better professional.
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h4>Some stuff about me:</h4>
+                <ul>
+                    <li>Psychology and philosophy have always caught my attention, and maybe someday I'll get a minoring
+                        in any of them.</li>
+                    <li>I'm currently learning about AI and Machine Learning and I've like it so much, I believe it has
+                        tons of potential.</li>
+                    <li>I love RPG videogames even though right now I don't have so much time to play them.</li>
+                    <li>I'm the middle brother of 3.</li>
+                    <li>At the beginning of the year I went to Boston for a Congress and I fell in love with that place.</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h4>My musical experience:</h4>
+                <ul>
+                    <li>I began to play guitar in 2012 and at first it became a need, I learned watching YouTube videos
+                        and searching for my favorite songs tabs, even today when I have the time, if
+                        I'm in my room I cannot take it away from me.</li>
+                    <li>From 2014 to 2017 I entered the National Music System, and there I learned to read music and
+                        play oboe and cello, also I was part of an orchestra there.</li>
+                    <li>Around 2018 a friend of mine called me to get into a band as the bassist and since then we've
+                        been playing our own songs, and we even released one of them.</li>
+                    <li>In my first year of career I entered an university musical group as the main guitar, this group
+                        has gave me a lot of experiences like when we attended an internation university festival called FICCUA,
+                        it has also helped me with the university payment.</li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+</main>
+{% endblock %}

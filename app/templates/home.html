@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<link href="{% static styles %}" rel="stylesheet">
+
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <img class="bd-placeholder-img rounded-circle" src="{% static main_img %}" width="140" height="140">
+            <br>
+            <br>
+            <h3>Hi, I'm Javier Araya!</h3>
+            <p class="lead"> I'm a Computer Engineering student at Tecnológico de Costa Rica graduating in November
+                2022, I love music and technology and I am very interested in combining them to create something
+                that could mitigate the environments of violence and precariousness to which many young people and
+                children around the world are subjected.
+            </p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            {% for project in projects %}
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img class="card-img-top" src="{% static project.image %}">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ project.title }}</h4>
+                        <p class="card-text">{{ project.description }}</p>
+                        <a href="{% url 'project_detail' project.pk %}" class="btn btn-primary">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+
+{% endblock %}
