@@ -8,10 +8,10 @@
                 <a class="nav-link {{ home_page }}" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  {{ about_page }}" href="{% url 'about' %}">About</a>
+                <a class="nav-link {{ about_page }}" href="{% url 'about' %}">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Projects</a>
+                <a class="nav-link {{ projects_page }}" href="{% url 'projects' %}">Projects</a>
             </li>
         </ul>
     </div> 
@@ -20,7 +20,8 @@
 <br>
 <br>
 {% block page_content %}{% endblock %}
-
+<br>
+<br>
 
 <footer class="footer mt-auto py-3">
     <div class="icon-container">

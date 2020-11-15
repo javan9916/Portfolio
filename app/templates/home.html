@@ -21,13 +21,16 @@
 
     <div class="container">
         <div class="row">
+            {% if projects|length == 0 %}
+            <h2 class="text-muted" style="text-align: center; width: 100%;">There are no current projects to show</h2>
+            {% else %}
             {% for project in projects %}
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
                     <img class="card-img-top" src="{% static project.image %}">
                     <div class="card-body">
                         <h4 class="card-title">{{ project.title }}</h4>
-                        <p class="card-text">{{ project.description }}</p>
+                        <p class="card-text">{{ project.shortDescription }}</p>
                         <a href="{% url 'project_detail' project.pk %}" class="btn btn-primary">
                             Read More
                         </a>
@@ -35,6 +38,7 @@
                 </div>
             </div>
             {% endfor %}
+            {% endif %}
         </div>
     </div>
 </main>

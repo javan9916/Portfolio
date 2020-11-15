@@ -2,17 +2,27 @@
 {% load static %}
 
 {% block page_content %}
-<h1>{{ project.title }}</h1>
-<div class="row">
-    <div class="col-md-8">
-        <img src="{% static project.image %}" alt="" width="100%">
-    </div>
-    <div class="col-md-4">
-        <h5>About the project:</h5>
-        <p>{{ project.description }}</p>
-        <br>
-        <h5>Technology used:</h5>
-        <p>{{ project.technology }}</p>
+<link href="{% static styles %}" rel="stylesheet">
+
+<br>
+<br>
+<div class="container">
+    <h1 style="text-align: center; width: 100%;">{{ project.title }}</h1>
+    <hr class="featurette-divider">
+    <div class="row">
+        <div class="col-md-8">
+            <img src="{% static project.image %}" alt="" width="100%">
+        </div>
+        <div class="col-md-4">
+            <h5>About the project:</h5>
+            <p>{{ project.description }}</p>
+            <p>Official page: <a href="https://www.media.mit.edu/projects/saving-face/overview/" target="_blank"> here
+                </a></p>
+            <br>
+            <h5>Technologies used:</h5>
+            <p>{{ project.technologies }}</p>
+        </div>
     </div>
 </div>
+
 {% endblock %}

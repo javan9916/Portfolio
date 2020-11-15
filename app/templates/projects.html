@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<link href="{% static styles %}" rel="stylesheet">
+
+<div class="container project">
+    {% if projects|length == 0 %}
+    <h2 class="text-muted" style="text-align: center; width: 100%;">There are no current projects to show</h2>
+    {% else %}
+    {% for project in projects %}
+    {% if not forloop.counter|divisibleby:2 %}
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">{{ project.title }}</span>
+            </h2>
+            <p class="text-muted lead">{{ project.position }}</p>
+            <p>{{ project.shortDescription }}</p>
+            <a href="{% url 'project_detail' project.pk %}" class="btn btn-primary">
+                Read More
+            </a>
+        </div>
+        <div class="col-md-5">
+            <img src="{% static project.image %}" width="100%">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+    {% else %}
+    <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">{{ project.title }}</h2>
+            <p class="text-muted lead">{{ project.position }}</p>
+            <p>{{ project.shortDescription }}</p>
+            <a href="{% url 'project_detail' project.pk %}" class="btn btn-primary">
+                Read More
+            </a>
+        </div>
+        <div class="col-md-5 order-md-1">
+            <img src="{% static project.image %}" width="100%">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+    
+</div>
+
+
+
+{% endblock %}
